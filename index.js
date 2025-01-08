@@ -1,1 +1,4 @@
-console.log('This is a new log!')
+console.log(1);
+console.log(4);
+console.log(3);
+console.log(2);
