@@ -9,12 +9,17 @@
     .red-button {
         background-color: red;
         color: white;
-        border: none;
+        border:  2px solid black;
     }
     .yellow-button{
         background-color: yellow;
         color:blue;
-        border: none;
+        border:  2px solid black;
+    }
+    .orange-button{
+        background-color: orange;
+        color: black;
+        border: 2px solid black;
     }
 
 </style>
@@ -25,10 +30,12 @@
     onclick="
     alert('this is a red button')">RED BUTTON
     </button>
+    
 <p>
     Hello world!<br>
     (hover over buttons for info)
 </p>
+
 <P>
     this an example of nesting
     <button title="click for explaination"
@@ -36,9 +43,30 @@
         onclick="
         alert('nesting = element inside element')">YELLOW BUTTON
     </button>
+    
 </P>
+ <p>
+    Exercise:<br>
+    Adults Plain Cotton T-Shirt<br><br>
+    Price: $7.99<br>
+    <button title="this was an exercise given by the youtuber"
+    class="yellow-button"
+    onclick="
+    alert('do you want to add this item to the cart?')">Add to cart
+    </button>
+    <button title="same as the previous button"
+    class="orange-button"
+    onclick="alert('redirecting to the payments page')"
+    > Buy now
+    </button>
+
+ </p>
+  
 <script>
+    
     alert('the code in the "script" tag runs first and the"onclick" runs after you click');
+    console.log(2+2);
+    console.log('a string' +" " +'of text')
 </script>
 </body>
 </html>
