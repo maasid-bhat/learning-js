@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>CART QUANTITY </title>
-  
+    <title>CART QUANTITY</title>
+    <script defer src="./index.js"></script>
   </head>
-  
+
   <body>
-    <button onclick="console.log(`Cart quantity: ${cartQuantity}`);">Show Quantity</button>
-
-
-    <button onclick="cartQuantity++;
-    console.log(`Cart quantity: ${cartQuantity}`)"
-    > Add to Cart</button>
-
-
-    <button onclick="cartQuantity = cartQuantity + 2;
-    console.log(`Cart Quantity: ${cartQuantity}`)"
-    >+2</button>
-
-    <button onclick="cartQuantity+= 3;
-    console.log('short cut to increase value of variable')
-    console.log(`Cart Quantity: ${cartQuantity}`)"
-    >+3</button>
-
-    <button onclick="cartQuantity--;
-    console.log(`cart Quantity: ${cartQuantity}`)"
-    >
-
-    </button>
-
-
-    <button onclick="cartQuantity = 0
-    console.log('cart was reset')
-    console.log(`Cart Quantity: ${cartQuantity}`)"
-    >Reset Cart</button>
-
-
-      <script>
-       let cartQuantity = 0; 
-      </script>
+    <button id="show">Show Quantity</button>
+    <button id="add-to-cart">Add to Cart</button>
+    <button id="add-twice">+2</button>
+    <button id="reset">Reset cart</button>
+    <button id="remove-button">Remove item</button>
   </body>
 </html>

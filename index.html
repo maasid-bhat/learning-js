@@ -1,72 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>
-        html,css and js together
-    </title>
+  <head>
+    <title>Html,css and js together</title>
     <!-- if we write "button" all the buttons will be affected -->
-<style>
-    .red-button {
+    <style>
+      .red-button {
         background-color: red;
         color: white;
-        border:  2px solid black;
-    }
-    .yellow-button{
+        border: 2px solid black;
+      }
+
+      .yellow-button {
         background-color: yellow;
-        color:blue;
-        border:  2px solid black;
-    }
-    .orange-button{
+        color: blue;
+        border: 2px solid black;
+      }
+
+      .orange-button {
         background-color: orange;
         color: black;
         border: 2px solid black;
-    }
+      }
+    </style>
+  </head>
+  <!--can hover over for additional info using title-->
 
-</style>
- </head>
- <!--can hover over for additional info using title-->
-<body>
-    <button title="well done"class="red-button"
-    onclick="
-    alert('this is a red button')">RED BUTTON
+  <body>
+    <button
+      title="well done"
+      class="red-button"
+      onclick="alert('this is a red button')"
+    >
+      RED BUTTON
     </button>
-    
-<p>
-    Hello world!<br>
-    (hover over buttons for info)
-</p>
 
-<P>
-    this an example of nesting
-    <button title="click for explaination"
+    <p>
+      Hello world!<br />
+      (hover over buttons for info)
+    </p>
+
+    <p>
+      this an example of <i>nesting</i>
+    </p>
+
+    <button
+      title="click for explaination"
+      class="yellow-button"
+      onclick="alert('nesting = element inside element')"
+    >
+      YELLOW BUTTON
+    </button>
+
+    <p>
+      Exercise:<br />
+      Adults Plain Cotton T-Shirt<br /><br />
+      Price: $7.99<br />
+      <button
+        title="this was an exercise given by the youtuber"
         class="yellow-button"
         onclick="
-        alert('nesting = element inside element')">YELLOW BUTTON
-    </button>
-    
-</P>
- <p>
-    Exercise:<br>
-    Adults Plain Cotton T-Shirt<br><br>
-    Price: $7.99<br>
-    <button title="this was an exercise given by the youtuber"
-    class="yellow-button"
-    onclick="
-    alert('do you want to add this item to the cart?')">Add to cart
-    </button>
-    <button title="same as the previous button"
-    class="orange-button"
-    onclick="alert('redirecting to the payments page')"
-    > Buy now
-    </button>
+    alert('do you want to add this item to the cart?')"
+      >
+        Add to cart
+      </button>
+      <button
+        title="same as the previous button"
+        class="orange-button"
+        onclick="alert('redirecting to the payments page')"
+      >
+        Buy now
+      </button>
+    </p>
 
- </p>
-  
-<script>
-    
-    alert('the code in the "script" tag runs first and the"onclick" runs after you click');
-    console.log(2+2);
-    console.log('a string' +" " +'of text')
-</script>
-</body>
+    <script>
+      alert(
+        'the code in the "script" tag runs first and the"onclick" runs after you click'
+      );
+      console.log(2 + 2);
+      console.log("a string" + " " + "of text");
+    </script>
+  </body>
 </html>
+
