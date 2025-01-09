@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./index.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>
+        html,css and js together
+    </title>
+    <!-- if we write "button" all the buttons will be affected -->
+<style>
+    .red-button {
+        background-color: red;
+        color: white;
+        border: none;
+    }
+    .yellow-button{
+        background-color: yellow;
+        color:blue;
+        border: none;
+    }
+
+</style>
+ </head>
+ <!--can hover over for additional info using title-->
 <body>
-    <p>Hello world!</p>
+    <button title="well done"class="red-button"
+    onclick="
+    alert('this is a red button')">RED BUTTON
+    </button>
+<p>
+    Hello world!<br>
+    (hover over buttons for info)
+</p>
+<P>
+    this an example of nesting
+    <button title="click for explaination"
+        class="yellow-button"
+        onclick="
+        alert('nesting = element inside element')">YELLOW BUTTON
+    </button>
+</P>
+<script>
+    alert('the code in the "script" tag runs first and the"onclick" runs after you click');
+</script>
 </body>
 </html>
