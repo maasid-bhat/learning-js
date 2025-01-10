@@ -11,7 +11,10 @@ function showQuantity() {
 }
 function addToCart(toAdd) {
   cartQuantity = cartQuantity + toAdd;
-  console.log(`New number of items ${cartQuantity}`);
+  if(cartQuantity > 10){
+    alert('cart is full')
+  }else{
+  console.log(`New number of items ${cartQuantity}`);}
 }
 
 function reset() {
@@ -21,7 +24,10 @@ function reset() {
 }
 function remove() {
   cartQuantity--;
-  console.log(`New number of items ${cartQuantity}`);
+  if(cartQuantity<=0){
+    alert('cart is empty')
+  }else{
+  console.log(`New number of items ${cartQuantity}`);}
 }
 
 showButton.addEventListener("click", showQuantity);
