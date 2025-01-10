@@ -2,115 +2,17 @@
 <html lang="en">
   <head>
     <title>rock paper scissors</title>
+    <script defer src="./rock-paper-scissors-script.js"></script>
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
-    <button
-      onclick="
-     const randomNumber=Math.random();
-     let computerMove='';
+    <p>
+      <center>Rock Paper Scissors</center>
+    </p>
+    
+    <button id="rock">Rock</button>
 
+    <button id="paper">Paper</button>
 
-  if (randomNumber >= 0 && randomNumber <1/4){
-    computerMove='rock';
-  }
-  else if (randomNumber>=1/4 && randomNumber<2/4){
-    computerMove='paper';
-  }
-  else if(randomNumber>= 2/4 && randomNumber< 3/4){
-    computerMove='scissors';
-
-  }
-  else if(randomNumber >=3/4 && randomNumber <= 1){
-    computerMove='Thermonuclear Warhead';
-  }
-  let result=''
-
-  console.log(computerMove);
-
-  if (computerMove ==='rock'){
-    result='Tie!';
-  }else if(computerMove ==='paper'){
-    result= 'You lose!';
-  }else if(computerMove === 'scissors'){
-    result= 'You win!';
-  }else if (computerMove === 'Thermonuclear Warhead'){
-    result= 'You lose,lmao';
-  }
-  alert(`You picked rock, computer picked ${computerMove},
-  ${result}`)"
-    >Rock</button>
-
-    <button
-      onclick="
-       const randomNumber=Math.random();
-       let computerMove='';
-
-
-  if (randomNumber >= 0 && randomNumber <1/4){
-    computerMove='rock';
-  }
-  else if (randomNumber>=1/4 && randomNumber<2/4){
-    computerMove='paper';
-  }
-  else if(randomNumber>= 2/4 && randomNumber< 3/4){
-    computerMove='scissors';
-
-  }
-  else if(randomNumber >=3/4 && randomNumber <= 1){
-    computerMove='Thermonuclear Warhead';
-  }
-  let result=''
-
-  console.log(computerMove);
-
-  if (computerMove ==='rock'){
-    result='You Win!';
-  }else if(computerMove ==='paper'){
-    result= 'Tie!';
-  }else if(computerMove === 'scissors'){
-    result= 'You Loose!';
-  }else if (computerMove === 'Thermonuclear Warhead'){
-    result= 'You lose,lmao';
-  }
-  alert(`You picked paper, computer picked ${computerMove},
-  ${result}`)"
-  >Paper</button>
-
-    <button
-      onclick="
-       const randomNumber=Math.random();
-      let computerMove='';
-
-
-  if (randomNumber >= 0 && randomNumber <1/4){
-    computerMove='rock';
-  }
-  else if (randomNumber>=1/4 && randomNumber<2/4){
-    computerMove='paper';
-  }
-  else if(randomNumber>= 2/4 && randomNumber< 3/4){
-    computerMove='scissors';
-
-  }
-  else if(randomNumber >=3/4 && randomNumber <= 1){
-    computerMove='Thermonuclear Warhead';
-  }
-  let result=''
-
-  console.log(computerMove);
-
-  if (computerMove ==='rock'){
-    result='You Loose!';
-  }else if(computerMove ==='paper'){
-    result= 'You Win!';
-  }else if(computerMove === 'scissors'){
-    result= 'Tie!';
-  }else if (computerMove === 'Thermonuclear Warhead'){
-    result= 'You lose,lmao';
-  }
-  alert(`You picked Scissors, computer picked ${computerMove},
-  ${result}`)"
-    >Scissors</button>
+    <button id="scissors">Scissors</button>
   </body>
 </html>
