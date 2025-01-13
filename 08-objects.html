@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+   <script>
+    //an object is use to store multiple values in pairs(property value pairs).
+     const product ={
+      name: 'socks',
+      price: 1090
+     };
+     console.log(product);
+     console.log(product.name);
+     console.log(product.price)
+     //can also update the value of those 
+     product.name = "cotton socks";
+     console.log(product);
+     //can add new properties
+     product.quantity = 9;
+     console.log(product);
+     //can delete properties
+     delete product.quantity;
+     console.log(product);
+     //let us store multiple variables instead of creating one by one
+   </script>
+</body>
+</html>
