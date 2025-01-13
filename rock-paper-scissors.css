@@ -1,203 +1,182 @@
-/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Body styling */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff6f00, #ff9800);
-  height: 100vh;
+  background: linear-gradient(135deg, #6b7f8c, #2f3c4d);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column;
-  color: white;
-  animation: bodyBackgroundGlow 3s infinite alternate;
-}
-
-/* Body background glow animation */
-@keyframes bodyBackgroundGlow {
-  0% {
-    background: linear-gradient(135deg, #ff6f00, #ff9800);
-  }
-  50% {
-    background: linear-gradient(135deg, #ff3d00, #ff5722);
-  }
-  100% {
-    background: linear-gradient(135deg, #ff6f00, #ff9800);
-  }
-}
-
-/* Title with dynamic size, font, and animated effects */
-p {
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: 'Pacifico', cursive; /* Fun, bold cursive font (Google Font) */
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-shadow: 0 0 20px #ff9800, 0 0 30px #ff9800, 0 0 40px #ff9800;
-  margin-bottom: 3rem;
-  white-space: nowrap;
+  color: #fff;
   overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(20) 1s forwards, glow 1.5s ease-in-out infinite alternate, titleBounce 2s ease-in-out infinite, titleTextShadow 1.5s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
 }
 
-/* Keyframe for the typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.container {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Keyframe for the glowing effect */
-@keyframes glow {
+.container:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #ff5c5c, #ff9f9f);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:hover {
+  background: linear-gradient(145deg, #ff9f9f, #ff5c5c);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+button#reset {
+  background: linear-gradient(145deg, #4e90d1, #3a70a1);
+}
+
+button#reset:hover {
+  background: linear-gradient(145deg, #3a70a1, #4e90d1);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+#score {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+#score span {
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
   0% {
-    text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
-  }
-  50% {
-    text-shadow: 0 0 20px #ff9800, 0 0 40px #ff9800, 0 0 60px #ff9800;
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-    text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Keyframe for the bouncing effect */
-@keyframes titleBounce {
+@keyframes bounce {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
   }
   50% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-10px);
+    transform: translateY(0);
   }
 }
 
-/* Keyframe for the dynamic text-shadow effect */
-@keyframes titleTextShadow {
-  0% {
-    text-shadow: 0 0 20px #ff9800, 0 0 30px #ff9800, 0 0 40px #ff5722;
-  }
-  50% {
-    text-shadow: 0 0 30px #ff9800, 0 0 50px #ff5722, 0 0 60px #ff9800;
-  }
-  100% {
-    text-shadow: 0 0 20px #ff9800, 0 0 30px #ff9800, 0 0 40px #ff5722;
-  }
-}
-
-/* Button container */
-button {
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  border: 2px solid white;
-  border-radius: 50px;
-  margin: 1rem;
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, color 0.3s ease, box-shadow 0.3s ease;
-  animation: buttonPulse 2s infinite alternate;
-}
-
-/* Keyframe for button pulse effect */
-@keyframes buttonPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  }
-  100% {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-}
-
-/* Button ripple effect */
-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Button hover effects */
-button:hover {
-  transform: scale(1.1);
-  color: #ff6f00;
-}
-
-button:hover::before {
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 50%;
-}
-
-/* Active button state */
-button:active {
-  transform: scale(1);
-  color: #ff9800;
-  box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.3);
-}
-
-/* Button color styles */
 button#rock {
-  background-color: #4caf50;
-}
-
-button#rock:hover {
-  background-color: #388e3c;
+  background: linear-gradient(145deg, #f44336, #d32f2f);
 }
 
 button#paper {
-  background-color: #2196f3;
-}
-
-button#paper:hover {
-  background-color: #1976d2;
+  background: linear-gradient(145deg, #3f51b5, #303f9f);
 }
 
 button#scissors {
-  background-color: #f44336;
+  background: linear-gradient(145deg, #4caf50, #388e3c);
+}
+
+button#rock:hover {
+  background: linear-gradient(145deg, #d32f2f, #f44336);
+}
+
+button#paper:hover {
+  background: linear-gradient(145deg, #303f9f, #3f51b5);
 }
 
 button#scissors:hover {
-  background-color: #d32f2f;
+  background: linear-gradient(145deg, #388e3c, #4caf50);
 }
 
-/* Add a bouncing animation to the buttons */
-button#rock, button#paper, button#scissors {
-  animation: buttonBounce 1.5s ease-in-out infinite;
+button#rock:active {
+  animation: bounce 0.3s ease-in-out;
 }
 
-@keyframes buttonBounce {
-  0% {
-    transform: translateY(0);
+button#paper:active {
+  animation: bounce 0.3s ease-in-out;
+}
+
+button#scissors:active {
+  animation: bounce 0.3s ease-in-out;
+}
+
+#alert-box {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
   }
-  50% {
-    transform: translateY(-10px);
+
+  button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
   }
-  100% {
-    transform: translateY(0);
+
+  #score {
+    font-size: 1rem;
   }
 }
