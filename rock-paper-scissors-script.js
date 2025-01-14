@@ -1,19 +1,17 @@
-/*let score = {
-  wins: 0,
-  losses: 0,
-  ties: 0,
-};
+let score;
 
-/*function defaultScore(){*/
-if(score=== null){
-  score={
-   wins: 0,
-   losses: 0,
-   ties: 0,
- };
+const persistedScore = localStorage.getItem("score");
+
+if (persistedScore) {
+  score = JSON.parse(persistedScore);
+} else {
+  score = {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+  };
 }
 
-let savedScore = JSON.parse(localStorage.getItem("score"));
 const moveList = {
   ROCK: "rock",
   PAPER: "paper",
@@ -30,7 +28,8 @@ const resultsList = {
 
 let result = "";
 
-const scoreText = document.getElementById('score');
+const scoreText = document.getElementById("score");
+scoreText.innerText = `Wins:${score.wins},Losses:${score.losses},Ties:${score.ties}`;
 
 function getComputerMove() {
   const randomNumber = Math.random();
@@ -58,9 +57,8 @@ function trackScore() {
   } else {
     score.losses += 1;
   }
-  console.log(score);
-  localStorage.setItem('score', JSON.stringify(score));
-  
+
+  localStorage.setItem("score", JSON.stringify(score));
 }
 
 function getResult(playerMove) {
@@ -134,13 +132,13 @@ scissorsButton.addEventListener("click", function () {
 // Reset button
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", function () {
-  localStorage.removeItem('score')
+  localStorage.removeItem("score");
+
   score = {
     wins: 0,
     losses: 0,
     ties: 0,
-    
   };
-  
+
   scoreText.innerText = "Score has been reset!";
 });
