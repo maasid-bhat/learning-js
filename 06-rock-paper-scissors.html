@@ -1,20 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>rock paper scissors</title>
+    <script>const score = JSON.parse(localStorage.getItem("score"));
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
     <script defer src="./rock-paper-scissors-script.js"></script>
-   
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        /* Dramatic Gradient Background */
+        background: linear-gradient(135deg, #ff6f61, #f39c12, #8e44ad);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        color: #fff;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 180px;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      #reset {
+        background-color: #e74c3c;
+      }
+
+      #reset:hover {
+        background-color: #c0392b;
+      }
+
+      /* Styling for multi-line paragraph */
+      #score {
+        margin-top: 30px;
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #2C3E50;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+        padding: 15px 25px;
+        border-radius: 12px;
+        width: 80%;
+        max-width: 800px;
+        margin-top: 30px;
+        line-height: 1.6;
+        text-align: left;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        white-space: pre-wrap; /* Allows multi-line text */
+        word-wrap: break-word; /* Break long words */
+      }
+
+      /* Optional: Add some spacing for better visual balance */
+      .game-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+    </style>
   </head>
   <body>
-    
-      <center>Rock Paper Scissors</center>
-    
-    <button id="rock">Rock</button>
+    <h1>Rock Paper Scissors</h1>
 
-    <button id="paper">Paper</button>
-
-    <button id="scissors">Scissors</button>
+    <div class="game-buttons">
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+    </div>
 
     <button id="reset">Reset Score</button>
+
+    <p id="score"></p>
+    
   </body>
 </html>

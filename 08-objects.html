@@ -6,7 +6,7 @@
   <title>Objects</title>
 </head>
 <body>
-   <script>
+   <script>/*
     //an object is use to store multiple values in pairs(property value pairs).
      const product ={
       name: 'socks',
@@ -24,7 +24,67 @@
      //can delete properties
      delete product.quantity;
      console.log(product);
-     //let us store multiple variables instead of creating one by one
+     //let us store multiple variables instead of creating one by one*/
+       
+
+     console.log('hello'.length);
+     console.log('hello'.toUpperCase());
+    /*object1 doesnt itself store the data.the data is stored somewhere in the computers memory and the object1 just points at it(address) */
+     const object1={
+      message: 'hello'
+     };
+     const object2= object1;
+     //now both are pointing to the same memory location
+     object1.message = 'good job!';
+     /*we were able to change the data inside object1 even though its a const.thats because const stops us from reassigning a diff value to the pointer.however,it cannot stop us from reaching in at the said location and make modifications*/
+     console.log(object1);
+     console.log(object2);
+     //both will show same result
+
+     const object3 ={
+      message: 'good job!'}
+
+      console.log(object3===object1);
+      /*the output would be false (even though both are same)as we are comparing the references and not the data stored at those particular memory location*/
+
+      console.log(object1===object2);
+      /*the output would be true as theyre both referencing to the same memory location*/
+
+
+      const object4 ={
+      message: 'good job!',
+      price:699
+    };
+      //shortcuts
+      //const message  =object4.message;
+      //lets say we want to take out the message&price values from obj4 and store it in separate variables 
+      const{message,price} =object4
+      //this is called de structuring
+
+      const object5 ={
+        message: message,
+        method: function function1(){
+          console.log('method123');
+        }
+      };
+      console.log(object5)
+      //we called the value we had stored in message variable
+      const obj5 ={
+        message
+      }//this will perform the same job as object 5
+
+      object5.method()
+      //calling method from object5
+      const object50 ={
+        message: message,
+        method(){
+          console.log('method1230');
+        }
+      };object50.method();
+      //does the same but shorter
+      //shorthand method
+
+     
    </script>
 </body>
 </html>

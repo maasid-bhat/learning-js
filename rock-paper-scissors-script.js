@@ -1,9 +1,19 @@
-let score = {
+/*let score = {
   wins: 0,
   losses: 0,
   ties: 0,
 };
 
+/*function defaultScore(){*/
+if(score=== null){
+  score={
+   wins: 0,
+   losses: 0,
+   ties: 0,
+ };
+}
+
+let savedScore = JSON.parse(localStorage.getItem("score"));
 const moveList = {
   ROCK: "rock",
   PAPER: "paper",
@@ -17,6 +27,10 @@ const resultsList = {
   VIOLATION: "You Loose, lmao!",
   TIE: "Tie!",
 };
+
+let result = "";
+
+const scoreText = document.getElementById('score');
 
 function getComputerMove() {
   const randomNumber = Math.random();
@@ -36,8 +50,6 @@ function getComputerMove() {
   return computerMove;
 }
 
-let result = "";
-
 function trackScore() {
   if (result === resultsList.WIN) {
     score.wins += 1;
@@ -46,6 +58,9 @@ function trackScore() {
   } else {
     score.losses += 1;
   }
+  console.log(score);
+  localStorage.setItem('score', JSON.stringify(score));
+  
 }
 
 function getResult(playerMove) {
@@ -89,41 +104,43 @@ function getResult(playerMove) {
 }
 
 function getAlert(playerMove, computerMove) {
-  alert(`You picked ${playerMove}, computer picked ${computerMove},${result}
-  Wins:${score.wins},Losses:${score.losses},Ties:${score.ties}`);
+  scoreText.innerText = `You picked ${playerMove}, computer picked ${computerMove},${result} Wins:${score.wins},Losses:${score.losses},Ties:${score.ties}`;
+
+  return score;
 }
 
-// Rock button
-const rockButton = document.getElementById(moveList.ROCK);
-rockButton.addEventListener("click", function () {
-  const playerMove = moveList.ROCK;
+function play(playerMove) {
   const computerMove = getResult(playerMove);
   getAlert(playerMove, computerMove);
-});
+}
+// Rock button
+const rockButton = document.getElementById(moveList.ROCK);
+rockButton.addEventListener("click", () => {
+  play(moveList.ROCK);
+}); // this is an arrow function, it's same as the function on event listener below
 
 // Paper button
 const paperButton = document.getElementById(moveList.PAPER);
 paperButton.addEventListener("click", function () {
-  const playerMove = moveList.PAPER;
-  const computerMove = getResult(playerMove);
-  getAlert(playerMove, computerMove);
+  play(moveList.PAPER);
 });
 
 // Scissors button
 const scissorsButton = document.getElementById(moveList.SCISSORS);
 scissorsButton.addEventListener("click", function () {
-  const playerMove = moveList.SCISSORS;
-  const computerMove = getResult(playerMove);
-  getAlert(playerMove, computerMove);
+  play(moveList.SCISSORS);
 });
 
 // Reset button
-const resetButton = document.getElementById("reset");
+let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", function () {
+  localStorage.removeItem('score')
   score = {
     wins: 0,
     losses: 0,
     ties: 0,
+    
   };
-  alert("Score has been reset");
+  
+  scoreText.innerText = "Score has been reset!";
 });
