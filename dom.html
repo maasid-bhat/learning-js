@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM</title>
-</head>
-<body>
-  <button>hello</button>
-  <script>
-    console.log(document.title);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      /*console.log(document.title);
     document.title = 'changed';//changes title
-
-
-   /* document.body.innerHTML="hello";
+    
+    
+    /* document.body.innerHTML="hello";
     document.title = 'good job!';*/
 
+      console.log(document.querySelector(".js-button"));
 
-    console.log(document.body);
-    console.log(typeof document.body);
+      // console.log(document.body);
+      console.log(typeof document.body);
 
-    console.log(document.body.innerHTML);
-    //inner html gives access to all the html in the body(here)
-    document.body.innerHTML='<button>good job!</button>'
+      // console.log(document.body.innerHTML);
+      //inner html gives access to all the html in the body(here)
+      document.body.innerHTML = "<button>good job!</button>";
 
-
-  </script>
-</body>
+      //document.querySelector() lets us get any element from the page and put inside js
+      document.querySelector("button").innerHTML;
+      //if we log it, it will give the html inside button
+      console.log(document.querySelector("button").innerHTML);
+      //we can change the html as well
+      document.querySelector("button").innerHTML = "changed(was good job)"; //can type in multiple lines
+      document.querySelector(".js-button");
+      /*class gives a title & . tells the queryselector to look for a class*/
+    </script>
+  </body>
 </html>
