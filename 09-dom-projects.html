@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+
+    <button
+      onclick="subscribe()"
+      class="js-subscribe-button"
+      >Subscribe
+    </button>
+    <p>Amazon Shipping Calculator</p>
+
+    <input placeholder="Cost of Order" class="js-cost-input" onkeydown="
+    if (event.key === 'Enter'){
+      calculateTotal();
+
+      console.log(event.key);
+    }
+    ">
+
+    <button onclick="
+    calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+  
+
+
+    <script>
+
+       function calculateTotal(){
+       document.querySelector('.js-cost-input');
+
+       let cost = Number( document.querySelector('.js-cost-input').value);
+      
+
+       if(cost < 40){
+        cost = cost + 10;
+        console.log(cost)
+       }
+
+       document.querySelector('.js-total-cost')
+       .innerHTML= `$${cost}`;
+      }
+    
+
+
+      function subscribe(){
+        const buttonElement = document.querySelector('.js-subscribe-button');
+          if(buttonElement.innerHTML=== 'Subscribe'){
+            buttonElement.innerHTML = 'Subscribed';
+          }else{
+            buttonElement.innerHTML= 'Subscribe'
+          }
+      }
+      /*cant use spaces while using innerHTML .so we can usee innerText(it ignores spaces)*/
+    </script>
+  </body>
+</html>

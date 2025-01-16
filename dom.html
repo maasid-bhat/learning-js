@@ -24,16 +24,19 @@
 
       // console.log(document.body.innerHTML);
       //inner html gives access to all the html in the body(here)
-      document.body.innerHTML = "<button>good job!</button>";
+      //document.body.innerHTML = "<button>good job!</button>";
 
       //document.querySelector() lets us get any element from the page and put inside js
       document.querySelector("button").innerHTML;
       //if we log it, it will give the html inside button
       console.log(document.querySelector("button").innerHTML);
       //we can change the html as well
-      document.querySelector("button").innerHTML = "changed(was good job)"; //can type in multiple lines
+      document.querySelector("button")
+      .innerHTML = "changed(was good job)"; //can type in multiple lines
       document.querySelector(".js-button");
       /*class gives a title & . tells the queryselector to look for a class*/
+      const buttonElement =document.querySelector(".js-button");
+      console.log(buttonElement);
     </script>
   </body>
 </html>
