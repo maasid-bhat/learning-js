@@ -6,18 +6,43 @@
     <title>ArraySwap</title>
   </head>
   <body>
-    <input placeholder="Enter Array Elements" class="array-js" />
+    <input onkeydown=" if(event.key==='Enter'){ arrayInput()} "
+    placeholder='Enter Array Elements' class='array-js'>
+
+    <button onclick="arrayInput()">Enter</button>
+
     <button onclick="arraySwap()">Swap</button>
+
+    
+
+
+    <div class =display-js></div>
     <script>
       let myArray = [];
 
-      function arraySwap() {
-        const input = document.querySelector(".array-js")
+      function arrayInput() {
+        let input = document.querySelector(".array-js")
 
         myArray.push(input.value)
+        
+        input.value=''
+       }
 
-        console.log(myArray);
-      }
+
+       function arraySwap(){
+        
+        const lastIndex = myArray.length - 1;
+        
+        const lastElement= myArray[lastIndex];
+        const firstElement= myArray[0];
+        
+
+        myArray[0]= lastElement;
+        myArray[lastIndex]=firstElement  ;
+        
+       document.querySelector(".display-js").innerHTML=`${myArray}`
+        
+       }
 
     </script>
   </body>

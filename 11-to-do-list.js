@@ -1,3 +1,9 @@
+function nullValue (){
+  console.log(lazy)
+}
+
+
+
 const todoList = [];
 
 function addTodo(){
@@ -26,10 +32,11 @@ function addTodo2(){
 
 inputElement.value="";
 //clears the input box
- let output= `<p>${todoList}</p>`
- for(i=-1;i<todoList.length;i++){
+ 
+
+  let output= `<li>${name}</li>`
    document.querySelector(".js-todo-list")
-   .innerHTML=`${output}`}
+   .innerHTML+=`${output}`
    
  }
 
