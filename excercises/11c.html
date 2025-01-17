@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArraySwap</title>
+  </head>
+  <body>
+    <input placeholder="Enter Array Elements" class="array-js" />
+    <button onclick="arraySwap()">Swap</button>
+    <script>
+      let myArray = [];
+
+      function arraySwap() {
+        const input = document.querySelector(".array-js")
+
+        myArray.push(input.value)
+
+        console.log(myArray);
+      }
+
+    </script>
+  </body>
+</html>
