@@ -37,6 +37,7 @@ inputElement.value="";
   let output= `<li>${name}</li>`
    document.querySelector(".js-todo-list")
    .innerHTML+=`${output}`
+   //increment coz otherwizse eveything displays in the same line
    
  }
 

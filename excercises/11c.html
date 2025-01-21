@@ -13,7 +13,7 @@
 
     <button onclick="arraySwap()">Swap</button>
 
-    
+    <button onclick="arrayReset()">reset</button> 
 
 
     <div class =display-js></div>
@@ -32,7 +32,7 @@
        function arraySwap(){
         
         const lastIndex = myArray.length - 1;
-        
+        console.log(lastIndex);
         const lastElement= myArray[lastIndex];
         const firstElement= myArray[0];
         
@@ -43,6 +43,12 @@
        document.querySelector(".display-js").innerHTML=`${myArray}`
         
        }
+         
+      function arrayReset(){
+          
+        document.querySelector(".display-js").innerHTML='';
+
+      } 
 
     </script>
   </body>
