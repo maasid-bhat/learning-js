@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays and loops</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3];
+      //array1=reference [1,2,3]=values
+      const array2 = array1;
+      //array2 doesnt contain [1,2,3],but the reference(both point to the same value)
+
+      const array3 = [1, 2, 3];
+
+      const array4 = array3.slice();
+      //now both point to 2 different arrays
+
+      const [firstValue, secondValue] = [1, 2, 3];
+      //can be used instead of index
+
+      function doubleArray(nums) {
+        const numsDoubled = [];
+
+        for (i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (num === 0) {
+            return numsDoubled;
+          }
+
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled;
+      }
+
+      console.log(doubleArray([1, 2, 3, 4, 9]));
+      console.log(doubleArray([6, 8, 9, 6, 21]));
+      console.log(doubleArray([1, 2, 3, 4,0, 9]));
+    </script>
+  </body>
+</html>

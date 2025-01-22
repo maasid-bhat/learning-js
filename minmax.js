@@ -30,6 +30,7 @@ function calculateMinMax() {
   for (i = 0; i < array.length; i++) {
 
     let index = array[i];
+    //have to use this inside the loop coz were using i.
 
     if (index < min) {
       min = index;
@@ -39,7 +40,7 @@ function calculateMinMax() {
     }
     
   }
-  let output=`Min = ${min}  Max = ${max}`
+  let output=`Min Value = ${min}  Max Value = ${max}`
 
   document.querySelector('.display-result')
   .innerHTML=`${output}`

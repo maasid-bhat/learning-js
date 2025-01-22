@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <script>
+    function greetings(){
+      console.log('hello');
+    }
+    greetings()
+
+    const function1= function() {console.log('hello2');
+  }
+
+  console.log(function1)
+
+  const object1={
+    num:2,
+    fun: function(){console.log('hello3');}
+  }
+  object1.fun();
+  //we can store functions inside variables(they are basically values)
+
+    function display(param){
+      //we can use the param as a variable inside the func
+      console.log(param);
+    }
+    display(69)
+
+    function run(param){
+      param()
+      //we can call param as a function since it has a func inside it
+    }
+    run(function(){
+      console.log('hello4')
+    })
+
+    
+
+
+
+    setTimeout(function(){console.log('timeout')},3000)
+
+    console.log('wait 3 secs');//called asynchronus code
+    //the computer doesnt wait for 3 secs here,it just sets a timer and moves on
+    //hence 'wait3  secs' is printed first
+
+
+   setInterval(function(){console.log('interval')}, 3000)
+   //this function will be called evey 3 seconds (1000 milli secs = 1 sec)
+
+  </script>
+  
+</body>
+</html>

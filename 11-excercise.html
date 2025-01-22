@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < foods.length; i++) {
+          // Only skip 'egg' if we removed less than 2
+          // of them so far.
+          if (foods[i] === "egg" && eggsRemoved < 2) {
+            // Update the number of 'egg' we have removed.
+            // This must be done before continue, otherwise,
+            // doing continue first will just skip this code.
+            eggsRemoved++;
+            continue;
+          }
+
+          result.push(foods[i]);
+        }
+
+        return result;
+      }
+
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+
+      for (i = 1; i > 21; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("fizzbuzz");
+        } else if (i % 3 === 0) {
+          console.log("fizz");
+        } else if (i % 5 === 0) {
+          console.log("buzz");
+        } else {
+          console.log(i);
+        }
+      }
+    </script>
+  </body>
+</html>
