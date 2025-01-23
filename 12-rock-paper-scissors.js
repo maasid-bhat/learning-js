@@ -12,6 +12,28 @@ function updateScoreElement() {
   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
+
+
+let isAutoplaying= false;//to track if were playing or not
+let intervalid=''
+//need to declare it outside so that it stores the id from insifde the function 
+
+ 
+function autoPlay(){
+  if(!isAutoplaying){
+   intervalid=setInterval(function(){
+    const playerMove = pickComputerMove()
+    
+    playGame(playerMove)},1000)
+    isAutoplaying=true;
+  }
+  else{
+    clearInterval(intervalid);
+    isAutoplaying= false;
+  }
+}
+
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 

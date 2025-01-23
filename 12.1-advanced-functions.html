@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>advanced functions</title>
+</head>
+<body>
+  <button class="click-js">click</button>
+  <button class="click2-js">click2</button>
+  <script>
+   /* [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value,index){
+
+    console.log(index);
+    console.log(value);})*/
+
+
+
+    [
+      'make dinner',
+      'wash dishes',
+g    ].forEach(function(value,index){
+      if(value=== 'wash dishes'){
+        return ;
+        //break is difficult to use in for each loop
+        //it will skip wash dishes
+      }
+      
+    console.log(index);
+    console.log(value);})
+
+//shortcut to write functions
+    const arrowFunction = (param) =>{
+      console.log(param)
+    };
+
+    arrowFunction("hello");
+
+    const clickEvent= document.querySelector('.click-js')
+    //addEventlistener enables us to add multiple eventlisteners for an event eig.,
+
+    clickEvent.addEventListener('click',()=>
+    console.log('click'))
+
+    clickEvent.addEventListener('click',()=>
+    console.log('click2'))
+
+
+
+
+  const eventListener= ()=>{
+    console.log('click')}
+    //had to create a separate variable to store it because
+  //removeeventlistener needs the exact func that needs to be removed
+
+  const clickEvent2 =document.querySelector('.click2-js')
+
+   clickEvent2.addEventListener('click',()=> eventListener)
+
+
+   clickEvent2.removeEventListener('click',()=> eventListener)
+    
+
+    clickEvent2.addEventListener('click',()=>
+    console.log('click2'))
+
+  </script>
+</body>
+</html>
