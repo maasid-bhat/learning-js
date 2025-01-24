@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title class="title-js">App</title>
-</head>
-<body>
-  <button class="add-js"
-  onclick="addToCart()">Add to Cart</button>
-  <p class="display-js"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="title-js">App</title>
+  </head>
+  <body>
+    <button class="add-js" onclick="addToCart()">Add to Cart</button>
+    <p class="display-js"></p>
 
+    <button onclick="addMessage()">Add</button>
 
-  <button onclick="addMessage()">Add</button>
+    <button onclick="removeMessage()">Remove</button>
 
-  <button onclick="removeMessage()">Remove</button>
-
-  <script>
-    
-   
-   function addToCart(){
-    clearTimeout()
-    let display= document.querySelector('.display-js')
-      display.innerHTML='Added'
-
-    setTimeout(function (){
-    display.innerHTML=""} ,2000)}
-     
-  
-
-
-      let messageCount=0;
-
-      let titleText=document.querySelector('.title-js');
-
-      setInterval(function(){
-        
-        if(messageCount===0){
-          return;
-        }
-
-    else if(titleText.innerHTML==='App'){
+    <script>
+      function addToCart() {
+        let timeout='';
+        let display = document.querySelector(".display-js");
+       
+       if (display.innerHTML = "Added"){
+        clearTimeout(timeout)}
+else{
+         timeOut = setTimeout(function () {
+          display.innerHTML = "";
+        }, 2000);}
       
-        titleText.innerHTML=`(${messageCount})new messages`;
-
-      }else {
         
-        titleText.innerHTML="App";}
-      },1000);
+      }
 
-    function addMessage(){
-      messageCount++
-    }
+      let messageCount = 0;
 
-    function removeMessage(){
-      messageCount--
-    }
-    
+      let titleText = document.querySelector(".title-js");
 
-  </script>
-</body>
+      setInterval(function () {
+        if (messageCount === 0) {
+          return;
+        } else if (titleText.innerHTML === "App") {
+          titleText.innerHTML = `(${messageCount})new messages`;
+        } else {
+          titleText.innerHTML = "App";
+        }
+      }, 1000);
+
+      function addMessage() {
+        messageCount++;
+      }
+
+      function removeMessage() {
+        messageCount--;
+      }
+    </script>
+  </body>
 </html>
