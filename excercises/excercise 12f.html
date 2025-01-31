@@ -14,17 +14,22 @@
     <button onclick="removeMessage()">Remove</button>
 
     <script>
+
+      let timeOut;
       function addToCart() {
-        let timeout='';
+
         let display = document.querySelector(".display-js");
        
-       if (display.innerHTML = "Added"){
-        clearTimeout(timeout)}
-else{
-         timeOut = setTimeout(function () {
+        display.innerHTML = "Added";
+
+        if(timeOut){
+          clearTimeout(timeOut)
+        }
+     
+        timeOut = setTimeout(function () {
           display.innerHTML = "";
-        }, 2000);}
-      
+        },2000);
+
         
       }
 
